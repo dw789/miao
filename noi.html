@@ -269,7 +269,7 @@
         if((x==1)||(x==3)||(x==5)){
             console.log("NO");
         }
-        else console.log("Yes");
+        else console.log("YES");
     }
 </script>
 
@@ -301,3 +301,104 @@
         console.log(y.toFixed(3));
     }
 </script>
+
+<script id="ch0104/14" type="1.4.14">
+    var x = +prompt("输入一个重量(g)");
+    var y = prompt("是否加急");
+    if(y=="y"){
+        if (x<=1000) {
+            console.log(13);    
+        }
+        else if (x>1000) {
+            var n=x-1000;
+            if(n%500>0)
+                console.log(parseInt(n/500+1)*4+13);
+            else if(n%500==0)
+                console.log(parseInt(n/500)*4+13); 
+        }
+    }
+    else if(y=="n"){
+        if (x<=1000) {
+            console.log(8);    
+        }
+        else if (x>1000) {
+            var n=x-1000;
+            if(n%500>0)
+                console.log(parseInt(n/500+1)*4+8);
+            else if(n%500==0)
+                console.log(parseInt(n/500)*4+8); 
+        }
+    }
+</script>
+
+<script id="ch0104/15" type="1.4.15">
+    var x = +prompt("输入一个数值");
+    var y = +prompt("输入一个数值");
+    var z = +prompt("输入一个数值");
+    if((x>=y)&&(x>=z)){
+        console.log(x);
+    }
+    else if((y>=x)&&(y>=z)){
+        console.log(y);
+    }
+    else if((z>=x)&&(z>=y)){
+        console.log(z);
+    }
+</script>
+
+<script id="ch0104/16" type="1.4.16">
+    var x = +prompt("输入一个数值");
+    var y = +prompt("输入一个数值");
+    var z = +prompt("输入一个数值");
+    if(((x+y)>z)&&((x+z)>y)&&((y+z)>x)&&(Math.abs(x-y)<z)&&(Math.abs(x-z)<y)&&(Math.abs(y-z)<z))
+    {
+        console.log("yes");
+    }
+    else console.log("no");
+</script>
+
+<script id="ch0104/17" type="1.4.17">
+    var x = +prompt("输入一个数值");
+    if (((x%400 == 0)&&(x%3200!=0))||((x%4 == 0)&&(x%100!=0))) {
+        console.log("Y");
+    }
+    else console.log("N")
+</script>
+
+<script id="ch0104/18" type="1.4.18">
+    var x= +prompt("输入一个数值");
+    var y= +prompt("输入一个数值");
+    if((x>=-1)&&(x<=1)&&(y>=-1)&&(y<=1)){
+        console.log("yes");
+    }
+    else console.log("no");
+</script>
+
+<script id="ch0104/19" type="1.4.19">
+    var x= +prompt("输入一个数值");
+    var y= +prompt("输入一个数值");
+    var z= prompt("输入一个操作符");
+    if(z=="+"){
+        console.log(x+y);
+    }
+    else if(z=="-"){
+        console.log(x-y);
+    }
+    else if(z=="*"){
+        console.log(x*y);
+    }
+    else if(z=="+"){
+        console.log(x+y);
+    }
+    else if(z=="-"){
+        console.log(x-y);
+    }
+    else if(z=="/"){
+        if(y==0){
+            console.log("Divided by zero!");
+        }
+        else console.log(x/y);
+    }
+    else console.log("Invalid operator!");
+</script>
+
