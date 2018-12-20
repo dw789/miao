@@ -416,3 +416,392 @@
     else console.log("Invalid operator!");
 </script>
 
+<!-- <script id="ch0104/20" type="">
+    var x=prompt("输入一个数值");
+</script> -->
+
+<script id="ch0104/21" type="12">
+    var n = +prompt("输入一个数值");
+    var x = +prompt("输入一个数值");
+    var y = +prompt("输入一个数值");
+    debugger;
+    if(y<=(n*x)){
+        console.log(n - Math.ceil(y / x));
+    }
+</script>
+
+
+<script id="ch0105/" type="122">
+    var N = +prompt("输入一个数值");
+    var M = +prompt("输入一个数值");
+    if((0<N<=5000)&&(0<M<=N){
+        for(var x=1;x<=M;x++){
+            
+        }
+    }
+</script>
+
+<script id="ch0105/01" type="1.5.1">
+    var n = +prompt("输入学生人数");
+    var y=0;
+    if((n>=1)&&(n<=100)){
+        for(var m=1;m<=n;m++){
+            var x= +prompt("依次输入学生的年龄");
+            y= x + y;
+        }
+    }
+    console.log((y/n).toFixed(2));
+</script>
+
+<script id="ch0105/02" type="1.5.2">
+    var n = 0;
+    for(var x=1;x<=12;x++){
+        var y = +prompt("输入每个月的结余");
+        n = y+n;
+    }
+    console.log("$"+(n/12).toFixed(2));
+</script>
+
+<script id="ch0105/03" type="1.5.3">
+    var n = +prompt("输入一个数值");
+    var y=0;
+    if((n>=1)&&(n<100)){
+        for(var m=1;m<=n;m++){
+            var x= +prompt("输入一个数值");
+            if(Math.abs(x)<1000){
+                y= x + y;
+            }
+        }
+    }
+    console.log((y/n).toFixed(2));
+</script>
+
+<script id="ch0105/04" type="1.5.4">
+    var n = +prompt("输入一个数值");
+    var y=0;
+    if((n>=1)&&(n<100)){
+        for(var m=1;m<=n;m++){
+            var x= +prompt("输入一个数值");
+            if(Math.abs(x)<1000){
+                y= x + y;
+            }  
+        }
+    }
+    console.log(y+" "+(y/n).toFixed(5));
+</script>
+
+<script id="ch0105/05" type="1.5.5">
+    var n = +prompt("输入一个数值");
+    var y = 0;
+    if((n>=1)&&(n<100)){
+        for(var m=0;m<n;m++){
+            var x= +prompt("输入一个数值");
+            if((x >= 0)&&(x <= 100)){
+                if(x>=y){
+                    y = x;
+                }
+            }
+        }
+    }
+    console.log(y);
+</script>
+
+<script id="ch0105/06" type="1.5.6">
+    var n = +prompt("输入一个数值");
+    var y = 0;
+    var z = 1000;
+    if((n>=1)&&(n<=1000)){
+        for(var m=0;m<n;m++){
+            var x= +prompt("输入一个数值");
+            if((x >= 0)&&(x <= 1000)){
+                if(x>=y){
+                    y = x;
+                }
+                if(x<=z){
+                    z = x;
+                }
+            }
+        }
+    }
+    console.log(y-z);
+</script>
+
+<script id="ch0105/07" type="1.5.7">
+    var n = +prompt("输入参赛天数");
+    var Au=0;
+    var Ag=0;
+    var Cu=0;
+    if((n>=1)&&(n<=17)){
+        for(var m=0;m<n;m++){
+            for(a=0;a<3;a++){
+                var x= +prompt("输入一个数值");
+                if(a==00){
+                    Au = x+Au;
+                }
+                else if(a==1){
+                    Ag = x+Ag;
+                }
+                else if(a==2){
+                    Cu = x+Cu;
+                }
+            }
+        }
+    }
+    console.log(Au+" "+Ag+" "+Cu+" "+Number(Au+Ag+Cu));
+</script>
+
+
+<script id="ch0105/08" type="1.5.8">
+    var n = +prompt("输入多边形的边数");
+    var y =0;
+    var z =0;
+    if(n>0){
+        for(var m=1;m<n;m++){
+            var x = +prompt("输入已知内角的度数");
+            if(x>0){
+                y=y+x;
+            }
+        }
+    }
+    if(y<(n-2)*180){
+        z = (n-2)*180-y;
+        console.log(z);
+    }
+</script>
+
+<script id="ch0105/09" type="1.5.9">
+    var m = +prompt("输入一个数值");
+    var n = +prompt("输入一个数值");
+    var y =0;
+    if((m>=0)&&(n>=m)&&(n<=300)){
+        for(var x=m;x<=n;x++){
+            if(x%2!=0){
+                y = x + y;
+            }
+        }   
+        console.log(y);
+    }
+</script>
+
+<script id="ch0105/10" type="1.5.10">
+    var m = +prompt("输入一个数值");
+    var n = +prompt("输入一个数值");
+    var y =0;
+    if((m>0)&&(n>m)&&(n<1000)){
+        for(var x=m;x<=n;x++){
+            if(x%17==0){
+                y = x + y;
+            }
+        }   
+        console.log(y);
+    }
+</script>
+
+<script id="ch0105/11" type="1.5.11">
+    var k = +prompt("输入一个数值");
+    var y =0;
+    var z =0;
+    var w =0;
+    if((k>1)&&(k<100)){
+        for(var m=0;m<k;m++){
+            var x = +prompt("输入一个数值");
+            if((x>=1)&&(x<=10)){
+                if(x==1){
+                    y = y+1;
+                }
+                else if(x==5){
+                    z = z+1;
+                }
+                else if(x==10){
+                    w = w +z;                        
+                }
+            }
+        }   
+    }
+    console.log(y);
+    console.log(z);
+    console.log(w);
+</script>
+
+<script id="ch0105/12" type="1.5.12">
+    var N = +prompt("输入一个数值");
+    var m = +prompt("输入一个数值");
+    var y = 0;
+    if(N<=100){
+        for(var n=0;n<N;n++){
+            var x = +prompt("输入一个数值");
+            if(x==m){
+                y = y+1;
+            }
+        }   
+        console.log(y);
+    }
+</script>
+
+<script id="ch0105/13" type="1.5.13">
+    var a = +prompt("输入一个数值");
+    var n = +prompt("输入一个数值");
+    var y = 1;
+    if((a>=-1000000)&&(a<=1000000)&&(n>=1)&&(n<=10000)){
+        for(var m=0;m<n;m++){
+            if(Math.abs(y*a)<=1000000){
+                y=y*a;
+            }
+        }   
+    }
+    console.log(y);
+</script>
+
+<script id="ch0105/14" type="1.5.15">
+    var x = +prompt("输入一个人口基数");
+    var n = +prompt("输入一个年数");
+    var y = 1;
+    if((x>=1)&&(x<=100)&&(n>=1)&&(n<=100)){
+        for(var m=0;m<n;m++){
+            y = y*(1+0.001)
+        }   
+    }
+    console.log((x*y).toFixed(4));
+</script>
+
+<script id="ch0105/15" type="1.5.15">
+    var r = +prompt("输入复合年利率");
+    var m = +prompt("输入一个本金");
+    var y = +prompt("输入一个投资年限") 
+    var n = 1;
+    if((r>=0)&&(r<=20)&&(m>=100)&&(m<=1000000)&&(y>=0)&&(y<=400)){
+        for(var z=0;z<y;z++){
+            n = n*(1+0.01*r)
+        }   
+    }
+    console.log(Math.floor(m*n));
+</script>
+
+<script id="ch0105/16" type="1.5.16">
+    var x = +prompt("输入一个数值");
+    var k = +prompt("输入一个数值");
+    var n = 1;
+    if((x>=10)&&(x<=50)&&(k>=1)&&(k<=20)){
+        for(var m=1;m<=20;m++){
+            n = n*(1+0.01*k);
+            if((x*m)>=(200*n/(1+0.01*k))){
+                console.log(m);
+                break;
+            }
+            if(m==20){
+                if((50*m)<(200*n/(1+0.01*k))){
+                    console.log("Impossible");
+                }
+            }
+        }   
+    }
+</script>
+
+<Script id="ch0105/17" type="1,5.17">
+    var k = +prompt("输入一个数值");
+    var a1 = 1; 
+    var a2 = 1;
+    var  n = 0;
+    if((k>=1)&&(k<=2)){
+        for(var x=1;x<=k;x++){
+            n = n +1;
+        }
+        console.log(n);
+    }
+    else if((k>=3)&&(k<=46)){
+        for(var y=1;y<=(k-2);y++){
+            a3 = a1+a2;
+            a1 = a2;
+            a2 = a3;
+        }   
+        console.log(a3);
+    }
+</Script>
+
+<script id="ch0105/18" type="1.5.18">
+    var n = +prompt("输入一个数值");
+    var a = +prompt("输入一个数值");
+    var b = +prompt("输入一个数值");
+    if((n>1)&&(n<=20)){
+        for(var x=1;x<n;x++){
+            var y = +prompt("输入一个数值");
+            var z = +prompt("输入一个数值");
+            if((z/y-b/a)>0.05){
+                console.log("better");
+            }
+            else if((b/a-z/y)>0.05){
+                console.log("worse");
+            }
+            else console.log("same");
+        }
+    }
+</script>
+
+<script id="ch0105/19" type="1.5.19">
+    var n = +prompt("输入一个数值");
+    var time ;
+    for(m=0;m<n;m++){
+        var x = +prompt("输入坐标x");
+        var y = +prompt("输入坐标y");
+        var z = +prompt("输入求援人数")
+        time = Math.ceil(Math.sqrt(x*x+y*y)/25+1.5*z);
+        console.log(time);
+    }
+</script>
+
+<script id="ch0105/20" type="1.5.20">
+    var h = +prompt("输入一个数值");
+    var s1 =40;
+    var s=0 ;
+    for(var m=0;m<10;m++){
+        h = h*0.5;
+    }
+    for(var n=0;n<9;n++){
+        s1 = s1*0.5;
+         s = s+s1;
+    }
+    console.log((s+20).toFixed(4));
+    console.log(h.toFixed(7));
+</script>
+
+<script id="ch0105/21" type="1.5.21">
+    var n = +prompt("输入一个数值");
+    if(n<=100000){
+        if(n%2==1){
+            console.log(n+"*"+3+"+"+1+"="+(3*n+1));
+            n=3*n+1;
+            n=2*n;
+            while(n%2==0){
+                for(var m=0;m<n;m++){
+                    n = n/2;
+                    if(n%2==0){
+                        console.log(n+"/"+2+"="+n/2);
+                    }
+                    else if(n%2==1){
+                        console.log("End");
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+
+
+
+<script id="ch0105/25" type="1.5.25">
+    for(var x=1;x<=6;x++){
+        for(var y=0;y<=6;y++){
+            for(var z=1;z<=6;z++){
+                if((40*x+y-24*z)==0){
+                    console.log(81*x+9*y+z);
+                    console.log(z*100+y*10+x);
+                    console.log(x*100+y*10+z);
+                }
+            }
+        }
+    }
+</script>
+
+
+
