@@ -915,16 +915,18 @@
     }
 </script>
 
-<script id="ch0105/28" type="">
+<script id="ch0105/28" type="1.5.28">
     var number = +prompt();
     var m = "";
+    var x = " ";
     for(var i=0;i<10;i++){
         var n = String(number %10);
-        m = m + n + " ";
-        number = ~~(number/10); 
-        if(number==0){
+        m = m + n;
+        if(number<10){
             break;
         }
+        m = m+x;
+        number = ~~(number/10); 
     }
     console.log(m);
 </script>
