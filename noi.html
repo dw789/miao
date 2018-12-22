@@ -915,17 +915,53 @@
     }
 </script>
 
-<script id="ch0105/28" type="">
+<script id="ch0105/28" type="1.5.28">
     var number = +prompt();
-    for(var i=0;i<number;i++){
-        
+    var m = "";
+    for(var i=0;i<10;i++){
+        var n = String(number %10);
+        m = m + n + " ";
+        number = ~~(number/10); 
+        if(number==0){
+            break;
+        }
     }
+    console.log(m);
 </script>
 
-<script id="ch0105/29" type="">
+<script id="ch0105/29" type="1.5.29">
     var number = +prompt();
-    for(var i=0;i<number;i++){
-        
+    var x =0;
+    var y =0.1; 
+    var m = "";
+    if(number>=0){
+        for(var i=0;i<10;i++){
+            var n = String(number %10);
+            if(number %10==0){
+                n="";
+            }
+            m = m + n;
+            number = ~~(number/10); 
+            if(number==0){
+                break;
+            }
+        }
+        console.log(m);
+    }
+    else if(number<0){
+        var number2= -number;
+        for(var i=0;i<10;i++){
+            n = String(number2 %10);
+            if(number2 %10==0){
+                n="";
+            }
+            m = m + n;
+            number2 = ~~(number2/10); 
+            if(number2==0){
+                break;
+            }
+        }
+        console.log("-"+m);
     }
 </script>
 
@@ -952,7 +988,6 @@
     var n = +prompt();
 
 </script>
-
 
 <script id="ch0105/32" type="1.5.32">
     var n = +prompt();
@@ -1022,12 +1057,23 @@
     console.log(s.toFixed(2));
 </script>
 
-<script id="ch0105/37" type="">
+<script id="ch0105/37" type="1.5.37">
     var m = +prompt();
     var n = +prompt();
     var x = +prompt();
-    
-
+    while(x>0){
+        var y = Math.floor(m / n);
+        if(m%n!=0){
+            y++;
+        }
+        if(x<y){
+            break;
+        }
+        x = x-y;
+        y = Math.floor(m/n);
+        n = n+y;
+    }   
+    console.log(n);
 </script>
 
 <script id="ch0105/38" type="">
@@ -1104,7 +1150,7 @@
 </script>
 
 
-<script id="ch0105/42" type="">
+<script id="ch0105/42" type="1.5.42">
     var height = +prompt();
     var width = +prompt();
     var str1 = prompt();
@@ -1119,6 +1165,21 @@
         }
     }
     else if(m==0){
-        for(var j=0;j<)
+        var str3 = "";
+        var str4 = "";
+        for(var k=0;k<width-2;k++){
+            str3 +=" ";
+        }
+        for(var l=0;l<width;l++){
+            str4 += str1;
+        }
+        for(var j=0;j<width;j++){
+            if((j==0)||(j==width-1)){
+                console.log(str4)
+            }
+            else {
+                console.log(str1+str3+str1);
+            }
+        }
     }
 </script>
