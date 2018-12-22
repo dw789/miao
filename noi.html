@@ -436,6 +436,27 @@
 }
 </script>
 
+<script id="ch0104/20" type="1.4.20">
+    var a = +prompt();
+    var b = +prompt();
+    var c = +prompt();
+    var d = b*b - 4 * a *c;
+    var s = -b/(2*a);
+    var x1,x2;
+    if ((d >0) && (a != 0)) {
+      x1 = (-b + Math.sqrt(d)) / (2 * a).toFixed(5);
+      x2 = (-b - Math.sqrt(d)) / (2 * a).toFixed(5);
+      console.log("x1=" + x1+ ";x2=" + x2);
+    } else if (d == 0) {
+      console.log("x1=x2=" + s.toFixed(5));
+    } else if (d < 0){
+      var t = Math.sqrt(-d) / (2 * a);
+      x1 = s.toFixed(5) + "+" + (t.toFixed(5) + "i");
+      x2 = s.toFixed(5) + "-" + (t.toFixed(5) + "i");
+      console.log("x1=" + x1 + ";x2=" + x2);
+    }
+  </script>
+
 <script id="ch0104/21" type="12">
     var n = +prompt("输入一个数值");
     var x = +prompt("输入一个数值");
