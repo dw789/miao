@@ -441,7 +441,6 @@
     var n = +prompt("输入一个数值");
     var x = +prompt("输入一个数值");
     var y = +prompt("输入一个数值");
-    debugger;
     if(y<=(n*x)){
         console.log(n - Math.ceil(y / x));
     }
@@ -1079,12 +1078,29 @@
     console.log(n);
 </script>
 
-<script id="ch0105/00" type="1.5.00">
-    var m = +prompt();
+<script id="ch0105/38" type="1.5.38">
     var n = +prompt();
-    var x = +prompt();
-    
-
+    var s2= 0;
+    var bn= ""; 
+    var str = "";
+    var m = n;
+    for(var i=0;i<=n;i++){
+        var s = +prompt();
+        s2 = s + s2;
+        if((i==n)&&((s2-s)==0)){
+            str = "0";
+        }
+        else {
+            bn = String(m*s);
+            if(m==0){
+                break;
+            }
+            str = str+ bn;
+            str = str + " ";
+            m = m-1; 
+        }
+    }
+    console.log(str);
 </script>
 
 <script id="ch0105/39" type="1.5.19">
