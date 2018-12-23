@@ -1263,3 +1263,41 @@
     }
     console.log(sum);
 </script>
+
+
+<!-- 给定M和N，求从M个物体中选出N个的排列与组合的数量：
+Ｃ（ｍ，ｎ）
+Ａ（ｍ，ｎ） -->
+<script id="c&a" type="c&a">
+    var m = +prompt();
+    var n = +prompt();
+    var C = 1;
+    var A = 1;
+    var m2 = m;
+    var n2 = n;
+    for (var i = 1; i <= m; i++) { //计算排列Ａ（ｍ，ｎ）
+        A = A * m2;
+        if (i == n) {
+            break;
+        }
+        m2 = m2 - 1;
+    }
+    for (var j = 1; j <= n; j++) { //计算阶乘n！   
+        C = C * n2;
+        n2 = n2 - 1;
+    }
+    console.log(A);
+    console.log(A / C);
+</script>
+
+<!-- 题目：给定一个数，对其进行四舍五入，如1.4输出1，1.6输出2 -->
+<script id="round" type="round">
+    var number = +prompt();
+    console.log(Math.round(number));
+</script>
+
+
+</script>
+<script id="sqrt" sample-input="2" sample-output="1.414" comment="不使用Math.sqrt，求一个非负数的平方根，至少精确到小数点后3位">
+    
+</script>
