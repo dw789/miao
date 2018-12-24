@@ -1409,6 +1409,18 @@
 
 </script>
 
+<script id="complete-number" sample-input="6" sample-output="YES" comment="判断一个数是否为完全数">
+    var n = +prompt();
+    for (var j = 1; j < n; j++) {
+        if (n % j == 0) {
+            sum = sum + j;
+        }
+    }
+    if (sum == i) {
+        console.log("YES");
+    } else console.log("NO");
+</script>
+
 <script id="complete-numbers" sample-input="" sample-output="" comment="输出10000以内所有的完全数">
     for (var i = 1; i <= 10000; i++) {
         var n = i;
