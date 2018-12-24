@@ -1092,6 +1092,9 @@
         }
         else {
             bn = String(m*s);
+            if(s==0){
+                bn="";
+            }
             if(m==0){
                 break;
             }
@@ -1275,11 +1278,8 @@
     var A = 1;
     var m2 = m;
     var n2 = n;
-    for (var i = 1; i <= m; i++) { //计算排列Ａ（ｍ，ｎ）
+    for (var i = 1; i <= n; i++) { //计算排列Ａ（ｍ，ｎ）
         A = A * m2;
-        if (i == n) {
-            break;
-        }
         m2 = m2 - 1;
     }
     for (var j = 1; j <= n; j++) { //计算阶乘n！   
@@ -1296,8 +1296,35 @@
     console.log(Math.round(number));
 </script>
 
-
+<!-- (m-√n)^2=m^2-2m√n+n>=0,√n<=(m^2+n)/2m;
+ m>√n时,(m*m+n)/(2*m)<m;
+ m<√n时,(m*m+n)/(2*m)>m; -->
 </script>
 <script id="sqrt" sample-input="2" sample-output="1.414" comment="不使用Math.sqrt，求一个非负数的平方根，至少精确到小数点后3位">
-    
+    var n = +prompt();
+    var m = 0;
+    var x = 2;
+    do {
+        m = x;
+        x = (m * m + n) / (2 * m);
+    } while (x != m);
+    console.log(x.toFixed(3));
+</script>
+
+<!-- s题目：敲7。输出1到100以内所有7的倍数以及数字中包含7的数，如7（7的倍数），37（不是倍数但数位中包含7）都需要输出，依次类推 -->
+<script id="7" sample-input="" sample-output="" comment="敲7，输出7的倍数或数位中含有7的数如（21，27）">
+    var n = +prompt();
+    var s1 = 0;
+    var s2 = 0;
+    for (var i = 1; i <= 100; i++) {
+        var m = i;
+        var m2 = m;
+        while (m2 != 0) {
+            if ((m2 % n == 0) || (m2 % 10 == 7)) {
+                console.log(m);
+                m2 = 0;
+            }
+            m2 = ~~(m2 / 10);
+        }
+    }
 </script>
