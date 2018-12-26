@@ -1325,6 +1325,24 @@
     }
 </script>
 
+<script id="sort" sample-input="4 1 7" sample-output="1 4 7" comment="输入三个数，把此三个数按升序输出">
+    var max = 0;
+    var min = 0;
+    var str = "";
+    for (var i = 0; i < 3; i++) {
+        var x = +prompt();
+        max = max + x;
+        if (x >= (max - x)) {
+            max = x;
+            str = str + String(max);
+        } else if (x < (max - x)) {
+            min = max - x;
+            str = String(max) + str;
+        }
+    }
+    console.log(str);
+</script>
+
 题目：水仙花数。水仙花数是指一个N位的十进制数，其各位数的N次方的和等于它自己。
 如：153 =　1的三次方+5的三次方+3的三次方，则153就是一个水仙花数
 或：1634 =　1的四次方+6的四次方+3的四次方+4的四次方
@@ -1474,22 +1492,167 @@
 <script id="lcf&lcm" sample-input="12 9" sample-output="36 3" comment="给定两个数，求它们的最小公倍数和最大公约数">
     var m = +prompt();
     var n = +prompt();
-    var max = 0;
+    var max, min, num;
     for (var i = 1; i <= m * n; i++) { //计算最小公倍数
         if ((i % m == 0) && (i % n == 0)) {
             console.log(i);
             break;
         }
     }
-    for (var j = 1; j <= (m + n) / 2; j++) { //计算最大公约数
-        if ((m % j == 0) && (n % j == 0)) {
-            max = j + max;
-            if (j >= (max - j)) {
-                max = j;
-            } else if (j < (max - j)) {
-                max = max - i;
+    // var m2 = Math.abs(m - n);
+    // for (var j = 1; j <= m2; j++) { //计算最大公约数
+    //     if ((m % j == 0) && (n % j == 0)) {
+    //         if (j > max) {
+    //             max = j;
+    //         }
+    //     }
+    // }
+    if (m >= n) {
+        max = m;
+        min = n;
+    } else if (m < n) {
+        max = n;
+        min = m;
+    }
+    do {
+        num = max % min;
+        max = min;
+        min = num;
+    }
+    while (num != 0)
+    console.log(max);
+</script>
+
+
+<script id="n!" sample-input="123">
+    var factorial = function (n) {
+        var m = 1;
+        for (var i = 1; i <= n; i++) {
+            m = m * i;
+        }
+        return m;
+    }
+    console.log(factorial(3));
+</script>
+
+<script id="n!" sample-input="12321313">
+    function base(n, x) {
+        var result = "";
+        var digit;
+        while (n > 0) {
+            dight = n % x;
+            result = digit + result;
+            n = (n - digit) / x;
+        }
+    }
+    return result;
+</script>
+
+
+(year-1+(year-1)/4 -(year-1)/100 +(year-1)/400+n)%7
+
+<!-- 在控制输出九九乘法表 -->
+<script id="n!" sample-input="12321313">
+    for (var i = 1; i <= 9; i++) {
+        var str = "";
+        for (var j = 1; j <= i; j++) {
+            n = i * j;
+            if (j == i) {
+                str = str + String(j) + "*" + String(i) + "=" + String(n);
+            } else str = str + String(j) + "*" + String(i) + "=" + String(n) + " ";
+        }
+        console.log(str);
+    }
+</script>
+
+<!-- 能同时被1~20分别整除的最小整数 -->
+<script id="n!" sample-input="12321314">
+    function getgbs(num1, num2) {
+        function gbs(number1, number2) {
+            for (var i = 1;; i++) {
+                if ((i * number1) % number2 == 0) {
+                    return i * number1;
+                }
+            }
+        }
+        var gbsinit = num1;
+        for (var j = num1 + 1; j <= num2; j++) {
+            gbsinit = gbs(gbsinit, j);
+        }
+        return gbsinit;
+    }
+    console.log(getgbs(1, 20));
+</script>
+
+<!-- 找出唯一的满足a + b + c = 1000的毕达哥拉斯三元组{a, b, c}。 -->
+<script id="123" sample-input="12321314">
+    var n = 1000;
+    for (var i = Math.floor(n / 3); i < Math.floor(n / 2); i++) {
+        for (var j = Math.floor(n / 6); j < Math.floor(n / 3); j++) {
+            if (i + j + Math.sqrt(i ** 2 - j ** 2) == 1000) {
+                console.log(j, (1000 - i - j), i);
             }
         }
     }
-    console.log(max);
+</script>
+
+<!-- 将一个数字的各位加起来求和。如果该和大于10，将得到这个数字继续进行这种操作，直到其只有一位数。 -->
+<script id="123" sample-input="12321314">
+    function abc(number) {
+        var num = number;
+        for (var i = 1;; i++) {
+            var m = 0;
+            while (num != 0) {
+                m = m + num % 10;
+                num = Math.floor(num / 10);
+            }
+            if (m > 10) {
+                num = m;
+            } else {
+                return m;
+                break;
+            }
+        }
+    }
+    console.log(abc());
+</script>
+
+<!-- 题目：字符串展开。把字符串中包含有类似“a-g”的字符串展开成完整形式。 -->
+<!-- 例："abc-fgx-z0-9"输出"abcdefgxyz0123456789"。（类似于上面行程编码的反操作) -->
+<script id="122313" sample-input="4242">
+    function strall(str) {
+
+    }
+</script>
+
+<!-- 
+题目：把单词转换成拨号键盘上的数字。
+如“dell”转换成3355.“alienware”转换成254369273 -->
+<script id="122313" sample-input="4242">
+    function tonumber(str) {
+        if ((str == "a") || (str == "b") || (str == "c")) {
+            return 2;
+        } else if ((str == "d") || (str == "e") || (str == "f")) {
+            return 3;
+        } else if ((str == "g") || (str == "h") || (str == "i")) {
+            return 4;
+        } else if ((str == "j") || (str == "k") || (str == "l")) {
+            return 5;
+        } else if ((str == "m") || (str == "n") || (str == "o")) {
+            return 6;
+        } else if ((str == "p") || (str == "q") || (str == "r") || (str == "s")) {
+            return 7;
+        } else if ((str == "t") || (str == "u") || (str == "v")) {
+            return 8;
+        } else if ((str == "w") || (str == "x") || (str == "y") || (str == "z")) {
+            return 9;
+        }
+    }
+    var str2 = prompt();
+    var lenght = str2.length;
+    var str3 = "";
+    for (var i = 0; i < lenght; i++) {
+        str3 = str3 + tonumber(str2.charAt(i));
+    }
+    console.log(str3);
 </script>
