@@ -68,7 +68,7 @@
   var h = 40;
   for (var i = x; i <= x + h; i++) {
     for (var j = y; j <= y + h; j++) {
-      dot(i, j, 'black');
+      dot(i, j, "rgb(" + 1 + "," + 111 + ",120)");
     }
   }
 
@@ -106,47 +106,38 @@
   var a = 100;
   var b = 200;
   // var r = 25;
-  for (var r = 25; r > 0; r--) {
+  for (var r = 25; r >= 0; r--) {
     for (var i = a - r; i <= a + r; i++) {
       var y1 = b + Math.sqrt(r ** 2 - (i - a) ** 2);
       var y2 = b - Math.sqrt(r ** 2 - (i - a) ** 2);
-      dot(i, y1);
-      dot(i, y2);
+      dot(i, y1, 'red');
+      dot(i, y2, 'red');
     }
     for (var i = b - r; i <= b + r; i++) {
       var x1 = a + Math.sqrt(r ** 2 - (i - b) ** 2);
       var x2 = a - Math.sqrt(r ** 2 - (i - b) ** 2);
-      dot(x1, i);
-      dot(x2, i);
+      dot(x1, i, 'red');
+      dot(x2, i, 'red');
     }
   }
 
+  //rgb矩形
+  var r = 0;
+  for (var i = 300; i < 350; i++) {
+    var g = 0;
+    for (var j = 150; j < 200; j++) {
+      dot(i, j, "rgb(" + r + "," + g + ",119)")
+      g = g + 4;
+    }
+    r = r + 5;
+  }
 
-  // var a = 100;
-  // var b = 100;
-  // var r = 50;
-  // var c;
-  // var y1;
-  // var y2;
-  // for (var i = 0, j = 0; i < 399; i++) {
-  //   if (i >= (a - r) && i <= (a + r)) {
-  //     c = ((i - a) ** 2 + b ** 2 - r ** 2);
-  //     y1 = ((2 * b) + Math.sqrt(4 * (b ** 2) - 4 * c)) / 2;
-  //     y2 = ((2 * b) - Math.sqrt(4 * (b ** 2) - 4 * c)) / 2;
-  //     dot(i, y1);
-  //     dot(i, y2);
-  //   }
-  // }
-  // for (var i = 0, j = 0; i < 399; i++) {
-  //   if (i >= (b - r) &&
-  //     i <= (b + r)) {
-  //     c = ((i - b) ** 2 + a ** 2 - r ** 2);
-  //     y1 = ((2 * a) + Math.sqrt(4 * (a ** 2) - 4 * c)) / 2;
-  //     y2 = ((2 * a) - Math.sqrt(4 * (a ** 2) - 4 * c)) / 2;
-  //     dot(y1, i);
-  //     dot(y2, i);
-  //   }
-  // }
+  //正弦sinx
+
+  for (let i = 0; i <= 200; i++) {
+    y = Math.sin(i / 10) * 20;
+    dot(20 + i, 260 - y, "red");
+  }
 
   function dot(x, y, color = 'black') {
     ctx.fillStyle = color
