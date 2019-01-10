@@ -13,7 +13,7 @@ var dw789 = {
                 result.push(array.slice(i, i + size));
                 i = i + size - 1;
             }
-            result.push(m - m % size);
+            result.push(array.slice(m - m % size));
             return result;
         }
     },
