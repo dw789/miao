@@ -1,9 +1,20 @@
 var dw789 = {
     chunk: function chunk(array, size) {
-        var result = []
-        for (var i = 0; i < array.length; i++) {
-            result.push(array.slice(i, i + size));
+        var result = [];
+        var m = array.length;
+        if (array % size == 0) {
+            for (var i = 0; i < m; i++) {
+                result.push(array.slice(i, i + size));
+                i = i + size - 1;
+            }
+            return result;
+        } else {
+            for (var i = 0; i < m - m % size; i++) {
+                result.push(array.slice(i, i + size));
+                i = i + size - 1;
+            }
+            result.push(m - m % size);
+            return result;
         }
-        return result;
     },
 }
