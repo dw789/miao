@@ -2,7 +2,7 @@ var dw789 = {
     chunk: function chunk(array, size) {
         var result = [];
         var m = array.length;
-        if (array % size == 0) {
+        if (m % size == 0) {
             for (var i = 0; i < m; i++) {
                 result.push(array.slice(i, i + size));
                 i = i + size - 1;
