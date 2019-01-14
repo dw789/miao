@@ -17,4 +17,31 @@ var dw789 = {
             return result;
         }
     },
+
+    compact: function compact(array) {
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] == null || array[i] == 0 || array[i] == "" || array[i] == undefined || array[i] == NaN || array[i] == false) {
+                array.splice(i, 1);
+            }
+        }
+        return array;
+    },
+
+    difference: function difference(array, values) {
+        var map = {};
+        var a = [];
+        for (var i = 0; i < values.length; i++) {
+            var char = values[i];
+            if (!(char in map)) {
+                map[char] = 1;
+            }
+        }
+        for (var i = 0, j = 0; i < array.length; i++) {
+            if (!(array[i] in map)) {
+                a[j] = array[i];
+                j++;
+            }
+        }
+        return a;
+    }
 }
