@@ -22,6 +22,7 @@ var dw789 = {
         for (var i = 0; i < array.length; i++) {
             if (array[i] == null || array[i] == 0 || array[i] == "" || array[i] == undefined || array[i] == NaN || array[i] == false) {
                 array.splice(i, 1);
+                i--;
             }
         }
         return array;
