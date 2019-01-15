@@ -44,5 +44,29 @@ var dw789 = {
             }
         }
         return a;
+    },
+
+    drop: function drop(array, nums) {
+        var a = [];
+        if (nums >= array.length || array.length == 0) {
+            return [];
+        }
+        for (var i = nums, j = 0; i < array.length; i++) {
+            a[j] = array[i];
+            j++;
+        }
+        return a;
+    },
+
+    dropRight: function dropRight(array, nums) {
+        var a = [];
+        if (nums >= array.length || array.length == 0) {
+            return [];
+        }
+        for (var i = 0, j = 0; i < array.length - nums; i++) {
+            a[j] = array[i];
+            j++;
+        }
+        return a;
     }
 }
