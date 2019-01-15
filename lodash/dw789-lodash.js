@@ -68,5 +68,12 @@ var dw789 = {
             j++;
         }
         return a;
+    },
+
+    fill: function fill(array, value, nums1, nums2) {
+        for (var i = nums1; i < nums2; i++) {
+            array[i] = value;
+        }
+        return array;
     }
 }
