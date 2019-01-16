@@ -70,7 +70,7 @@ var dw789 = {
         return a;
     },
 
-    fill: function fill(array, value, nums1, nums2) {
+    fill: function fill(array, value, start = 0, end = array.length) {
         for (var i = nums1; i < nums2; i++) {
             array[i] = value;
         }
