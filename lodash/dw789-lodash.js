@@ -97,6 +97,18 @@ var dw789 = {
 
     },
 
+    indexOf: function indexOf(array, value, fromIndex = 0) {
+        if (fromIndex < 0) {
+            return -1;
+        }
+        for (var i = fromIndex; i < array.length; i++) {
+            if (array[i] == value) {
+                return i;
+            }
+        }
+        return -1;
+    },
+
 
     initial: function initial(array) {
         var a = [];
@@ -165,5 +177,23 @@ var dw789 = {
             }
         }
         return a;
+    },
+
+    reverse: function reverse(array) {
+        var a = [];
+        for (var i = array.length - 1, j = 0; i >= 0; i--) {
+            a[j] = array[i];
+            j++;
+        }
+        return a;
+    },
+
+    sortedIndex: function sortedIndex(array, value) {
+        if (array.length <= 1) {
+
+        }
+        for (var i = 0; i < array.length; i++) {
+
+        }
     }
 }
