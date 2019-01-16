@@ -107,9 +107,51 @@ var dw789 = {
             a[j] = array[i];
         }
         return a;
+    },
+
+
+    join: function join(array, separator = ",") {
+        var str = "";
+        for (var i = 0; i < array.length; i++) {
+            if (i == array.length - 1) {
+                str = str + array[i];
+            } else {
+                str = str + array[i] + separator;
+            }
+        }
+        return str;
+    },
+
+    last: function last(array) {
+        if (array == []) {
+            return null;
+        }
+        return array[array.length - 1];
+    },
+
+    lastIndexOf: function lastIndexOf(array, value, fromIndex = array.length - 1) {
+        for (var i = fromIndex; i >= 0; i--) {
+            if (array[i] = value) {
+                return i;
+            }
+        }
+        return -1;
+    },
+
+    nth: function nth(array, n = 0) {
+        if (n < 0) {
+            return array[-n];
+        }
+        return array[n];
+    },
+
+    pull: function pull(array, ...values) {
+        var a = [];
+        for (var i = 0, j = 0; i < array.length; i++) {
+            if (array[i] != values) {
+                a[j] = array[i];
+            }
+        }
+        return a;
     }
-
-
-
-
 }
