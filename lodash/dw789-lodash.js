@@ -179,6 +179,23 @@ var dw789 = {
         return a;
     },
 
+    pullAll: function pullAll(array, values) {
+        var map = {};
+        var abc = [];
+        for (var i = 0; i < values.length; i++) {
+            if (!(values[i] in map)) {
+                map[values[i]] = 1;
+            }
+        }
+        for (var i = 0, j = 0; i < array.length; i++) {
+            if (!(array[i] in map)) {
+                abc[j] = array[i];
+                j++;
+            }
+        }
+        return abc;
+    },
+
     reverse: function reverse(array) {
         var a = [];
         for (var i = array.length - 1, j = 0; i >= 0; i--) {
@@ -188,12 +205,23 @@ var dw789 = {
         return a;
     },
 
-    sortedIndex: function sortedIndex(array, value) {
-        if (array.length <= 1) {
-
+    sortedIndexOf: function sortedIndexOf(array, value) {
+        var len = array.length;
+        if (array.length == 0) {
+            return 0;
+        }
+        if (value > array[len - 1]) {
+            return len;
+        }
+        if (value <= array[0]) {
+            return 0;
         }
         for (var i = 0; i < array.length; i++) {
-
+            if (value > array[i] && value < array[i + 1]) {
+                return i + 1;
+            } else if (value == array[i]) {
+                return i;
+            }
         }
     }
 }
