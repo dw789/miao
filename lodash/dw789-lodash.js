@@ -131,8 +131,11 @@ var dw789 = {
     },
 
     lastIndexOf: function lastIndexOf(array, value, fromIndex = array.length - 1) {
+        if (fromIndex < 0) {
+            return -1;
+        }
         for (var i = fromIndex; i >= 0; i--) {
-            if (array[i] = value) {
+            if (array[i] == value) {
                 return i;
             }
         }
@@ -146,10 +149,17 @@ var dw789 = {
         return array[n];
     },
 
-    pull: function pull(array, ...values) {
-        var a = [];
+    pull: function pull(array, values) {
+        var map = {};
+        var a = [].concat(values);
+        for (var i = 0; i < a.length; i++) {
+            if (!(a[i] in map)) {
+                map[a[i]] = 1;
+            }
+        }
+
         for (var i = 0, j = 0; i < array.length; i++) {
-            if (array[i] != values) {
+            if (!(array[i] in map)) {
                 a[j] = array[i];
                 j++
             }
