@@ -20,7 +20,7 @@ var dw789 = {
 
     compact: function compact(array) {
         for (var i = 0; i < array.length; i++) {
-            if (array[i] == null || array[i] == 0 || array[i] == "" || array[i] == undefined || array[i] == NaN || array[i] == false) {
+            if (array[i] == 0 || array[i] == null || array[i] == "" || array[i] == undefined || array[i] == NaN || array[i] == false) {
                 array.splice(i, 1);
                 i--;
             }
@@ -99,7 +99,11 @@ var dw789 = {
 
     indexOf: function indexOf(array, value, fromIndex = 0) {
         if (fromIndex < 0) {
-            return -1;
+            for (var i = 0; i < array.length; i++) {
+                if (array[i] == value) {
+                    return i;
+                }
+            }
         }
         for (var i = fromIndex; i < array.length; i++) {
             if (array[i] == value) {
@@ -161,7 +165,7 @@ var dw789 = {
         return array[n];
     },
 
-    pull: function pull(array, values) {
+    pull: function pull(array, ...values) {
         var map = {};
         var a = [].concat(values);
         for (var i = 0; i < a.length; i++) {
