@@ -77,9 +77,26 @@ var dw789 = {
         return array;
     },
 
+    head: function head(array) {
+        if (array[0] == null) {
+            return undefined;
+        }
+        return a[0];
+    },
+
     flatten: function flatten(array) {
 
-    }
+    },
+
+    fromPairs(pairs) {
+        var map = {};
+        for (var i = 0; i < pairs.length; i++) {
+            map[pairs[i][0]] = pairs[i][1];
+        }
+        return map;
+    },
+
+
 
 
 }
