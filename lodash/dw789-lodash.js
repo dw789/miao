@@ -105,6 +105,7 @@ var dw789 = {
         }
         for (var i = 0, j = 0; i < array.length - 1; i++) {
             a[j] = array[i];
+            j++;
         }
         return a;
     },
@@ -150,6 +151,7 @@ var dw789 = {
         for (var i = 0, j = 0; i < array.length; i++) {
             if (array[i] != values) {
                 a[j] = array[i];
+                j++
             }
         }
         return a;
