@@ -77,17 +77,6 @@ var dw789 = {
         return array;
     },
 
-    head: function head(array) {
-        if (array[0] == null) {
-            return undefined;
-        }
-        return a[0];
-    },
-
-    flatten: function flatten(array) {
-
-    },
-
     fromPairs(pairs) {
         var map = {};
         for (var i = 0; i < pairs.length; i++) {
@@ -95,6 +84,30 @@ var dw789 = {
         }
         return map;
     },
+
+
+    head: function head(array) {
+        if (array[0] == null) {
+            return undefined;
+        }
+        return array[0];
+    },
+
+    flatten: function flatten(array) {
+
+    },
+
+
+    initial: function initial(array) {
+        var a = [];
+        if (array.length <= 1) {
+            return [];
+        }
+        for (var i = 0, j = 0; i < array.length - 1; i++) {
+            a[j] = array[i];
+        }
+        return a;
+    }
 
 
 
