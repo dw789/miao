@@ -227,5 +227,43 @@ var dw789 = {
                 return i;
             }
         }
-    }
+    },
+
+    tail: function tail(array) {
+        if (array.length == 1 || array.length == 0) {
+            return [];
+        }
+        array.splice(0, 1);
+        return array;
+    },
+
+    take: function take(array, n = 1) {
+        if (n >= array.length) {
+            return array;
+        }
+        if (n <= 0) {
+            return [];
+        }
+        var a = [];
+        for (var i = 0, j = 0; i < n; i++) {
+            a[j] = array[i];
+            j++;
+        }
+        return a;
+    },
+
+    takeRight: function takeRight(array, n = 1) {
+        if (n >= array.length) {
+            return array;
+        }
+        if (n <= 0) {
+            return [];
+        }
+        var a = [];
+        for (var i = array.length - n, j = 0; i < array.length; i++) {
+            a[j] = array[i];
+            j++;
+        }
+        return a;
+    },
 }
