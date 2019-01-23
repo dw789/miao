@@ -252,7 +252,45 @@ var dw789 = {
         }
     },
     sortedLastIndex: function sortedLastIndex(array, value) {
-        
+        var len = array.length;
+        if (array.length == 0 || value < array[0]) {
+            return 0;
+        }
+        if (value >= array[len - 1]) {
+            return len;
+        }
+        for (var i = len - 1; i >= 0; i--) {
+            if (array[i] == value || value > array[i] && value < array[i + 1]) {
+                return i + 1;
+            }
+        }
+        return -1;
+    },
+
+    sortedUniq: function sortedUniq(array) {
+        var map = {};
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] in map) {
+                array.splice(i, 1);
+                i--;
+            } else {
+                map[array[i]] = 0;
+            }
+        }
+        return array;
+    },
+
+    sortedUniqBy: function sortedUniqBy(array, iteratee) {
+        var map = {};
+        for (var i = 0; i < array.length; i++) {
+            if (iteratee(array[i]) in map) {
+                array.splice(i, 1);
+                i--;
+            } else {
+                map[iteratee(array[i])] = 0;
+            }
+        }
+        return array;
     },
 
     tail: function tail(array) {
@@ -305,5 +343,19 @@ var dw789 = {
             }
         }
         return a;
+    },
+
+    uniq: function uniq(array) {
+        var map = {};
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] in map) {
+                array.splice(i, 1)
+                i--;
+            } else {
+                map[array[i]] = 0;
+            }
+        }
+        return array;
     }
+
 }
