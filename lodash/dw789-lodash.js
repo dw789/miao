@@ -20,14 +20,7 @@ var dw789 = {
 
     compact: function compact(array) {
         for (var i = 0; i < array.length; i++) {
-            if (
-                array[i] == 0 ||
-                array[i] == null ||
-                array[i] == "" ||
-                array[i] == undefined ||
-                array[i] == NaN ||
-                array[i] == false
-            ) {
+            if (array[i] == 0 || array[i] == null || array[i] == "" || array[i] == undefined || array[i] == NaN || array[i] == false) {
                 array.splice(i, 1);
                 i--;
             }
@@ -35,22 +28,25 @@ var dw789 = {
         return array;
     },
 
-    difference: function difference(array, values) {
+    difference: function difference(array, ...value) {
         var map = {};
         var a = [];
-        for (var i = 0; i < values.length; i++) {
-            var char = values[i];
+        for (var i = 0; i < array.length; i++) {
+            var char = array[i];
             if (!(char in map)) {
-                map[char] = 1;
+                map[char] = i;
             }
         }
-        for (var i = 0, j = 0; i < array.length; i++) {
-            if (!(array[i] in map)) {
-                a[j] = array[i];
+        for (var i = 0; i < value.length; i++) {
+            var j = 0;
+            while (j < value[i].length) {
+                if (value[i][j] in map) {
+                    array.splice(array.indexOf(value[i][j]), 1);
+                }
                 j++;
             }
         }
-        return a;
+        return array;
     },
 
     drop: function drop(array, n = 1) {
