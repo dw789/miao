@@ -9,18 +9,25 @@ var dw789 = {
             }
             return result;
         } else {
-            for (var i = 0; i < m - m % size; i++) {
+            for (var i = 0; i < m - (m % size); i++) {
                 result.push(array.slice(i, i + size));
                 i = i + size - 1;
             }
-            result.push(array.slice(m - m % size));
+            result.push(array.slice(m - (m % size)));
             return result;
         }
     },
 
     compact: function compact(array) {
         for (var i = 0; i < array.length; i++) {
-            if (array[i] == 0 || array[i] == null || array[i] == "" || array[i] == undefined || array[i] == NaN || array[i] == false) {
+            if (
+                array[i] == 0 ||
+                array[i] == null ||
+                array[i] == "" ||
+                array[i] == undefined ||
+                array[i] == NaN ||
+                array[i] == false
+            ) {
                 array.splice(i, 1);
                 i--;
             }
@@ -85,7 +92,6 @@ var dw789 = {
         return map;
     },
 
-
     head: function head(array) {
         if (array[0] == null) {
             return undefined;
@@ -93,9 +99,7 @@ var dw789 = {
         return array[0];
     },
 
-    flatten: function flatten(array) {
-
-    },
+    flatten: function flatten(array) {},
 
     indexOf: function indexOf(array, value, fromIndex = 0) {
         if (fromIndex < 0) {
@@ -113,7 +117,6 @@ var dw789 = {
         return -1;
     },
 
-
     initial: function initial(array) {
         var a = [];
         if (array.length <= 1) {
@@ -126,6 +129,22 @@ var dw789 = {
         return a;
     },
 
+    intersection: function intersection(...array) {
+        var a = [];
+        var map = {}
+        for (var i = 0; i < array.length; i++) {
+            var j = 0;
+            while (j < array[0].length) {
+                if (array[i][j] in map) {
+                    a.push(array[i][j]);
+                } else {
+                    map[array[i][j]] = 0;
+                }
+                j++;
+            }
+        }
+        return a;
+    },
 
     join: function join(array, separator = ",") {
         var str = "";
@@ -146,7 +165,11 @@ var dw789 = {
         return array[array.length - 1];
     },
 
-    lastIndexOf: function lastIndexOf(array, value, fromIndex = array.length - 1) {
+    lastIndexOf: function lastIndexOf(
+        array,
+        value,
+        fromIndex = array.length - 1
+    ) {
         if (fromIndex < 0) {
             return -1;
         }
@@ -177,7 +200,7 @@ var dw789 = {
         for (var i = 0, j = 0; i < array.length; i++) {
             if (!(array[i] in map)) {
                 a[j] = array[i];
-                j++
+                j++;
             }
         }
         return a;
@@ -228,6 +251,9 @@ var dw789 = {
             }
         }
     },
+    sortedLastIndex: function sortedLastIndex(array, value) {
+        
+    },
 
     tail: function tail(array) {
         if (array.length == 1 || array.length == 0) {
@@ -266,4 +292,18 @@ var dw789 = {
         }
         return a;
     },
+
+    union: function union(...array) {
+        var a = [];
+        for (var i = 0; i < array.length; i++) {
+            var j = 0;
+            while (j <= array[i].length - 1) {
+                if (a.indexOf(array[i][j]) == -1) {
+                    a.push(array[i][j]);
+                }
+                j++;
+            }
+        }
+        return a;
+    }
 }
