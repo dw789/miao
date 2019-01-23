@@ -228,6 +228,23 @@ var dw789 = {
         return a;
     },
 
+    sortedIndex: function sortedIndex(array, value) {
+        var len = array.length;
+        if (array.length == 0 || value < array[0]) {
+            return 0;
+        }
+        if (value > array[len - 1]) {
+            return len;
+        }
+        for (var i = 0; i < array.length; i++) {
+            if (value > array[i] && value < array[i + 1]) {
+                return i + 1;
+            } else if (value == array[i]) {
+                return i;
+            }
+        }
+    },
+
     sortedIndexOf: function sortedIndexOf(array, value) {
         var len = array.length;
         if (array.length == 0) {
